@@ -1,0 +1,16 @@
+假如当前有这样的需求：
+有一个MySQL数据库，里面创建了许多张表。
+在一些表的字段(列)中创建了某个字段各[列名](我们这里假定为字段:ColumnA)。
+现在，我们需要使用SQL语句从这个数据库中查询出所有包含了ColumnA字段的表，MySQL的查询应该如何来写呢，本文提供一种SQL语句写法供参考：
+
+SELECT DISTINCT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE COLUMN_NAME IN ('ColumnA')
+        AND TABLE_SCHEMA='Database';
+        
+查询同时包含了ColumnA和ColumnB等多个字段的表的SQL语句：
+
+SELECT DISTINCT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE COLUMN_NAME IN ('ColumnA','ColumnB')
+        AND TABLE_SCHEMA='Database';
