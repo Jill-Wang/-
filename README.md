@@ -7,6 +7,7 @@ SELECT DISTINCT TABLE_NAME
  
  
 【js string 转 int 注意的问题】
+
 var str='1250' ; 
 alert( Number(str) ); //得到1250 
 alert(parseInt(str)); //得到1250 
