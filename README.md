@@ -4,7 +4,8 @@ SELECT DISTINCT TABLE_NAME
     FROM INFORMATION_SCHEMA.COLUMNS
     WHERE COLUMN_NAME IN ('ColumnA')
         AND TABLE_SCHEMA='Database';
-        
+ 
+ 
 【js string 转 int 注意的问题】
 var str='1250' ; 
 alert( Number(str) ); //得到1250 
